@@ -4,7 +4,7 @@ export const LLM_CONFIG = {
   /* Ollama (local) config:
    */
   ollama: true,
-  url: 'http://127.0.0.1:11434',
+  url: 'https://llama3.enginable.com',
   chatModel: 'llama3' as const,
   embeddingModel: 'mxbai-embed-large',
   embeddingDimension: 1024,
