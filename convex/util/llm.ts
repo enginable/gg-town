@@ -1,33 +1,21 @@
 // That's right! No imports and no dependencies 🤯
 
 export const LLM_CONFIG = {
-  /* Ollama (local) config:
-   */
-  ollama: true,
-  url: 'https://llama3.enginable.com',
-  chatModel: 'llama3' as const,
-  embeddingModel: 'mxbai-embed-large',
-  embeddingDimension: 1024,
-  stopWords: ['<|eot_id|>'],
-  // embeddingModel: 'llama3',
-  // embeddingDimension: 4096,
+  /* Ollama (local) config: */
+  // ollama: true,
+  // url: 'https://llama3.enginable.com',
+  // chatModel: 'llama3' as const,
+  // embeddingModel: 'mxbai-embed-large',
+  // embeddingDimension: 1024,
+  // stopWords: ['<|eot_id|>'],
 
-  /* Together.ai config:
-  ollama: false,
-  url: 'https://api.together.xyz',
-  chatModel: 'meta-llama/Llama-3-8b-chat-hf',
-  embeddingModel: 'togethercomputer/m2-bert-80M-8k-retrieval',
-  embeddingDimension: 768,
-  stopWords: ['<|eot_id|>'],
-   */
 
-  /* OpenAI config:
+  /* OpenAI config:*/
   ollama: false,
   url: 'https://api.openai.com',
-  chatModel: 'gpt-3.5-turbo-16k',
+  chatModel: 'gpt-4o',
   embeddingModel: 'text-embedding-ada-002',
   embeddingDimension: 1536,
-   */
 };
 
 function apiUrl(path: string) {

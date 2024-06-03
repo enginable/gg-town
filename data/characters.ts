@@ -15,14 +15,14 @@ export const Descriptions = [
     plan: 'You will find something to eat.'
   },
   {
-    name: 'B',
-    character: 'Hot Dog Vendor',
+    name: 'Hot Dog Vendor',
+    character: 'f2',
     identity: 'The Hot Dog Vendor sells hot dogs for $2',
     plan: 'You will sell your hot dogs for $2'
   },
   {
-    name: 'C',
-    character: 'Diamond Seller',
+    name: 'Diamond Seller',
+    character: 'f3',
     identity: 'The Diamond Seller sells diamonds for $10,000, they are irresistible, but not food.',
     plan: 'You will sell your diamonds, you are an EXCELLENT salesperson.'
   },
