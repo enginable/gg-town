@@ -11,20 +11,20 @@ export const Descriptions = [
   {
     name: 'A',
     character: 'f1',
-    identity: 'Character A is always trying their hardest to win a game of tag.',
-    plan: 'You start the game of tag as "IT". You will try to win at ALL costs. The rules are simple, if you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.'
+    identity: 'Character A is always trying their hardest to win a game of tag.  The rules are simple, if you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.',
+    plan: 'You start the game of tag as "IT". You will try to win at ALL costs.'
   },
   {
     name: 'B',
     character: 'f2',
-    identity: 'Character B enjoys Tag, but is not super serious about it.',
-    plan: 'You start the game of tag as a player. You will try to win at ALL costs. The rules are simple, if you are not "IT" and someone says, "Beefsteak Tomato" to you, you become "IT". If you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.'
+    identity: 'Character B enjoys Tag, but is not super serious about it.  You will try to win at ALL costs. The rules are simple, if you are not "IT" and someone says, "Beefsteak Tomato" to you, you become "IT". If you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.',
+    plan: 'You start the game of tag as a player.'
   },
   {
     name: 'C',
     character: 'f3',
-    identity: `Character C plays tag, but doesn't love it.`,
-    plan: 'You start the game of tag as a player. You will try to win at ALL costs. The rules are simple, if you are not "IT" and someone says, "Beefsteak Tomato" to you, you become "IT". If you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.'
+    identity: `Character C plays tag, but doesn't love it.  You will try to win at ALL costs. The rules are simple, if you are not "IT" and someone says, "Beefsteak Tomato" to you, you become "IT". If you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.`,
+    plan: 'You start the game of tag as a player.'
   },
 ];
 
