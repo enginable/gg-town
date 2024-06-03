@@ -7,7 +7,7 @@ export const LLM_CONFIG = {
   // chatModel: 'llama3' as const,
   // embeddingModel: 'mxbai-embed-large',
   // embeddingDimension: 1024,
-  // stopWords: ['<|eot_id|>'],
+  stopWords: ['<|eot_id|>'],
 
 
   /* OpenAI config:*/
@@ -21,10 +21,10 @@ export const LLM_CONFIG = {
 function apiUrl(path: string) {
   // OPENAI_API_BASE and OLLAMA_HOST are legacy
   const host =
-    process.env.LLM_API_URL ??
-    process.env.OLLAMA_HOST ??
-    process.env.OPENAI_API_BASE ??
-    LLM_CONFIG.url;
+      process.env.LLM_API_URL ??
+      process.env.OLLAMA_HOST ??
+      process.env.OPENAI_API_BASE ??
+      LLM_CONFIG.url;
   if (host.endsWith('/') && path.startsWith('/')) {
     return host + path.slice(1);
   } else if (!host.endsWith('/') && !path.startsWith('/')) {
@@ -39,37 +39,37 @@ function apiKey() {
 }
 
 const AuthHeaders = (): Record<string, string> =>
-  apiKey()
-    ? {
-        Authorization: 'Bearer ' + apiKey(),
-      }
-    : {};
+    apiKey()
+        ? {
+          Authorization: 'Bearer ' + apiKey(),
+        }
+        : {};
 
 // Overload for non-streaming
 export async function chatCompletion(
-  body: Omit<CreateChatCompletionRequest, 'model'> & {
-    model?: CreateChatCompletionRequest['model'];
-  } & {
-    stream?: false | null | undefined;
-  },
+    body: Omit<CreateChatCompletionRequest, 'model'> & {
+      model?: CreateChatCompletionRequest['model'];
+    } & {
+      stream?: false | null | undefined;
+    },
 ): Promise<{ content: string; retries: number; ms: number }>;
 // Overload for streaming
 export async function chatCompletion(
-  body: Omit<CreateChatCompletionRequest, 'model'> & {
-    model?: CreateChatCompletionRequest['model'];
-  } & {
-    stream?: true;
-  },
+    body: Omit<CreateChatCompletionRequest, 'model'> & {
+      model?: CreateChatCompletionRequest['model'];
+    } & {
+      stream?: true;
+    },
 ): Promise<{ content: ChatCompletionContent; retries: number; ms: number }>;
 export async function chatCompletion(
-  body: Omit<CreateChatCompletionRequest, 'model'> & {
-    model?: CreateChatCompletionRequest['model'];
-  },
+    body: Omit<CreateChatCompletionRequest, 'model'> & {
+      model?: CreateChatCompletionRequest['model'];
+    },
 ) {
   assertApiKey();
   // OLLAMA_MODEL is legacy
   body.model =
-    body.model ?? process.env.LLM_MODEL ?? process.env.OLLAMA_MODEL ?? LLM_CONFIG.chatModel;
+      body.model ?? process.env.LLM_MODEL ?? process.env.OLLAMA_MODEL ?? LLM_CONFIG.chatModel;
   const stopWords = body.stop ? (typeof body.stop === 'string' ? [body.stop] : body.stop) : [];
   if (LLM_CONFIG.stopWords) stopWords.push(...LLM_CONFIG.stopWords);
   console.log(body);
@@ -138,7 +138,7 @@ export async function fetchEmbeddingBatch(texts: string[]) {
     return {
       ollama: true as const,
       embeddings: await Promise.all(
-        texts.map(async (t) => (await ollamaFetchEmbedding(t)).embedding),
+          texts.map(async (t) => (await ollamaFetchEmbedding(t)).embedding),
       ),
     };
   }
@@ -216,7 +216,7 @@ export async function fetchModeration(content: string) {
 export function assertApiKey() {
   if (!LLM_CONFIG.ollama && !apiKey()) {
     throw new Error(
-      '\n  Missing LLM_API_KEY in environment variables.\n\n' +
+        '\n  Missing LLM_API_KEY in environment variables.\n\n' +
         (LLM_CONFIG.ollama ? 'just' : 'npx') +
         " convex env set LLM_API_KEY 'your-key'",
     );
@@ -229,7 +229,7 @@ const RETRY_JITTER = 100; // In ms
 type RetryError = { retry: boolean; error: any };
 
 export async function retryWithBackoff<T>(
-  fn: () => Promise<T>,
+    fn: () => Promise<T>,
 ): Promise<{ retries: number; result: T; ms: number }> {
   let i = 0;
   for (; i <= RETRY_BACKOFF.length; i++) {
@@ -243,11 +243,11 @@ export async function retryWithBackoff<T>(
       if (i < RETRY_BACKOFF.length) {
         if (retryError.retry) {
           console.log(
-            `Attempt ${i + 1} failed, waiting ${RETRY_BACKOFF[i]}ms to retry...`,
-            Date.now(),
+              `Attempt ${i + 1} failed, waiting ${RETRY_BACKOFF[i]}ms to retry...`,
+              Date.now(),
           );
           await new Promise((resolve) =>
-            setTimeout(resolve, RETRY_BACKOFF[i] + RETRY_JITTER * Math.random()),
+              setTimeout(resolve, RETRY_BACKOFF[i] + RETRY_JITTER * Math.random()),
           );
           continue;
         }
@@ -471,15 +471,15 @@ export interface CreateChatCompletionRequest {
    * `auto` is the default if functions are present.
    */
   tool_choice?:
-    | 'none' // none means the model will not call a function and instead generates a message.
-    | 'auto' // auto means the model can pick between generating a message or calling a function.
-    // Specifies a tool the model should use. Use to force the model to call
-    // a specific function.
-    | {
-        // The type of the tool. Currently, only function is supported.
-        type: 'function';
-        function: { name: string };
-      };
+      | 'none' // none means the model will not call a function and instead generates a message.
+      | 'auto' // auto means the model can pick between generating a message or calling a function.
+      // Specifies a tool the model should use. Use to force the model to call
+      // a specific function.
+      | {
+    // The type of the tool. Currently, only function is supported.
+    type: 'function';
+    function: { name: string };
+  };
   // Replaced by "tools"
   // functions?: {
   //   /**
