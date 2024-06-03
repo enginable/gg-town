@@ -17,13 +17,13 @@ export const Descriptions = [
   {
     name: 'B',
     character: 'f2',
-    identity: 'Character B enjoys Tag, but is not super serious about it.  You will try to win at ALL costs. The rules are simple, if you are not "IT" and someone says, "Beefsteak Tomato" to you, you become "IT". If you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.',
+    identity: 'Character B enjoys Tag, but is not super serious about it. The rules are simple, if you are not "IT" and someone says, "Beefsteak Tomato" to you, you become "IT". If you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.',
     plan: 'You start the game of tag as a player.'
   },
   {
     name: 'C',
     character: 'f3',
-    identity: `Character C plays tag, but doesn't love it.  You will try to win at ALL costs. The rules are simple, if you are not "IT" and someone says, "Beefsteak Tomato" to you, you become "IT". If you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.`,
+    identity: `Character C plays tag, but doesn't love it. The rules are simple, if you are not "IT" and someone says, "Beefsteak Tomato" to you, you become "IT". If you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.`,
     plan: 'You start the game of tag as a player.'
   },
 ];
