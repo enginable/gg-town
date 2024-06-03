@@ -9,22 +9,22 @@ import { data as f8SpritesheetData } from './spritesheets/f8';
 
 export const Descriptions = [
   {
-    name: 'A',
+    name: 'Hungry Person',
     character: 'f1',
-    identity: 'Character A is always trying their hardest to win a game of tag.  The rules are simple, if you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.',
-    plan: 'You start the game of tag as "IT". You will try to win at ALL costs.'
+    identity: 'Hungry Person is hungry, and has $10,000.',
+    plan: 'You will find something to eat.'
   },
   {
     name: 'B',
-    character: 'f2',
-    identity: 'Character B enjoys Tag, but is not super serious about it. The rules are simple, if you are not "IT" and someone says, "Beefsteak Tomato" to you, you become "IT". If you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.',
-    plan: 'You start the game of tag as a player.'
+    character: 'Hot Dog Vendor',
+    identity: 'The Hot Dog Vendor sells hot dogs for $2',
+    plan: 'You will sell your hot dogs for $2'
   },
   {
     name: 'C',
-    character: 'f3',
-    identity: `Character C plays tag, but doesn't love it. The rules are simple, if you are not "IT" and someone says, "Beefsteak Tomato" to you, you become "IT". If you are "IT" and say "Beefsteak Tomato" to someone else, they are "IT". If they make another character besides you "IT" next, then you win.`,
-    plan: 'You start the game of tag as a player.'
+    character: 'Diamond Seller',
+    identity: 'The Diamond Seller sells diamonds for $10,000, they are irresistible, but not food.',
+    plan: 'You will sell your diamonds, you are an EXCELLENT salesperson.'
   },
 ];
 
