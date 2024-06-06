@@ -15,7 +15,7 @@ export const LLM_CONFIG = {
   url: 'https://api.openai.com',
   chatModel: 'gpt-4o',
   embeddingModel: 'text-embedding-ada-002',
-  embeddingDimension: 1536,
+  embeddingDimension: 1024,
 };
 
 function apiUrl(path: string) {

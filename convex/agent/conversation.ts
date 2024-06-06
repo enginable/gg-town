@@ -84,8 +84,8 @@ export async function continueConversationMessage(
       conversationId,
     },
   );
-  const now = Date.now();
-  const started = new Date(conversation.created);
+  const now = new Date(Date.now()).toLocaleString();
+  const started = new Date(conversation.created).toLocaleString();
   const embedding = await embeddingsCache.fetch(
     ctx,
     `What do you think about ${otherPlayer.name}?`,
